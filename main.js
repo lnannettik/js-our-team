@@ -64,54 +64,35 @@ const cards = [
 const teamContainer = document.querySelector('.team-container');
 
 
-
-
-
-
 // 3 - 4 - 
-
+// richiamo la funzione
 generatoreNuovaCard(cards, teamContainer);
 
-// for (let i = 0; i < cards.length; i++) {
-//     const card = cards[i];
-//     console.log(card);
-
-//     teamContainer.innerHTML += `
-//     <div class="team-card">
-
-//         <div class="card-image">
-//             <img src="img/wayne-barnett-founder-ceo.jpg" alt="Wayne Barnett"/>
-//         </div>
-
-//         <div class="card-text">
-//             <h3>${card.nome}</h3>
-//             <p>${card.ruolo}</p>
-//         </div>
-
-//     </div>`
-// }
-
-
+// creo una var per il button
 const btn = document.getElementById('addMemberButton')
 
+// assegno una serie di comandi all'evento click
 btn.addEventListener('click', function () {
 
-
+    // creo le constanti per leggere i dati inseriti nella label
     const nomeUtente = document.getElementById('name').value;
     const ruoloUtente = document.getElementById('role').value;
     const imgUtente = document.getElementById('image').value;
     
+    // creo un nuovo elemento per la nuova card, dove andrò ad inserire le costanti appena create
     const nuovoUtente = {};
 
+    // aggiungo le cost nel nuovo oggetto come valori di nome, ruolo e foto
     nuovoUtente.nome = nomeUtente;
     nuovoUtente.ruolo = ruoloUtente;
     nuovoUtente.foto = imgUtente;
-
     console.log(nuovoUtente);
 
+    // pusho il nuovo oggetto nel array iniziale
     cards.push(nuovoUtente);
     console.log(cards);
 
+    // inserisco nell'HTML dentro il div con classe .team-container
     teamContainer.innerHTML += `
     <div class="team-card">
 
@@ -125,18 +106,13 @@ btn.addEventListener('click', function () {
         </div>
 
     </div>`
-
-
 })
-
-
 
 
 // 5 -  
 function generatoreNuovaCard(cards, teamContainer) {
     for (let i = 0; i < cards.length; i++) {
         const card = cards[i];
-        // console.log(card);
     
         teamContainer.innerHTML += `
             <div class="team-card">

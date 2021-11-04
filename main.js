@@ -30,37 +30,34 @@ const cards = [
     {
         nome : 'Pippo',
         ruolo : 'Giullare',
-        foto : 'img\wayne-barnett-founder-ceo.jpg',
+        foto : 'img/wayne-barnett-founder-ceo.jpg',
         },
     {
         nome : 'Pippo',
         ruolo : 'Giullare',
-        foto : 'img\walter-gordon-office-manager.jpg',
+        foto : 'img/angela-caroll-chief-editor.jpg',
         },
     {
         nome : 'Pippo',
         ruolo : 'Giullare',
-        foto : 'immagine',
+        foto : 'img/walter-gordon-office-manager.jpg',
         },
     {
         nome : 'Pippo',
         ruolo : 'Giullare',
-        foto : 'immagine',
+        foto : 'img/angela-lopez-social-media-manager.jpg',
         },
     {
         nome : 'Pippo',
         ruolo : 'Giullare',
-        foto : 'immagine',
+        foto : 'img/scott-estrada-developer.jpg',
         },
     {
         nome : 'Pippo',
         ruolo : 'Giullare',
-        foto : 'immagine',
+        foto : 'img/barbara-ramos-graphic-designer.jpg',
         },
 ];
-
-// console.log(cards);
-// console.table(cards)
 
 
 // 2 - 
@@ -99,7 +96,7 @@ const btn = document.getElementById('addMemberButton')
 
 btn.addEventListener('click', function () {
 
-    
+
     const nomeUtente = document.getElementById('name').value;
     const ruoloUtente = document.getElementById('role').value;
     const imgUtente = document.getElementById('image').value;

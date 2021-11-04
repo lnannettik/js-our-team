@@ -19,28 +19,143 @@ console.log('js ok');
 
 // 4 - INSERIRE LE CARD NELLA HTML 
 
+// 5 - CREO LA FUNZIONE PER GENERARE I NUOVI POST
+
+// 6 - PRENDERE GLI ELEMENTI DA LABEL
+
+
 
 // 1 - 
 const cards = [
     {
-    nome : 'Pippo',
-    ruolo : 'Giullare',
-    foto : 'immagine'
-    }
+        nome : 'Pippo',
+        ruolo : 'Giullare',
+        foto : 'img\wayne-barnett-founder-ceo.jpg',
+        },
+    {
+        nome : 'Pippo',
+        ruolo : 'Giullare',
+        foto : 'img\walter-gordon-office-manager.jpg',
+        },
+    {
+        nome : 'Pippo',
+        ruolo : 'Giullare',
+        foto : 'immagine',
+        },
+    {
+        nome : 'Pippo',
+        ruolo : 'Giullare',
+        foto : 'immagine',
+        },
+    {
+        nome : 'Pippo',
+        ruolo : 'Giullare',
+        foto : 'immagine',
+        },
+    {
+        nome : 'Pippo',
+        ruolo : 'Giullare',
+        foto : 'immagine',
+        },
 ];
 
-console.log(cards);
-console.table(cards)
+// console.log(cards);
+// console.table(cards)
 
 
 // 2 - 
 const teamContainer = document.querySelector('.team-container');
 
 
-// 3 - 
-for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
-    console.log(card);
+
+
+
+
+// 3 - 4 - 
+
+generatoreNuovaCard(cards, teamContainer);
+
+// for (let i = 0; i < cards.length; i++) {
+//     const card = cards[i];
+//     console.log(card);
+
+//     teamContainer.innerHTML += `
+//     <div class="team-card">
+
+//         <div class="card-image">
+//             <img src="img/wayne-barnett-founder-ceo.jpg" alt="Wayne Barnett"/>
+//         </div>
+
+//         <div class="card-text">
+//             <h3>${card.nome}</h3>
+//             <p>${card.ruolo}</p>
+//         </div>
+
+//     </div>`
+// }
+
+
+const btn = document.getElementById('addMemberButton')
+
+btn.addEventListener('click', function () {
+
+    
+    const nomeUtente = document.getElementById('name').value;
+    const ruoloUtente = document.getElementById('role').value;
+    const imgUtente = document.getElementById('image').value;
+    
+    const nuovoUtente = {};
+
+    nuovoUtente.nome = nomeUtente;
+    nuovoUtente.ruolo = ruoloUtente;
+    nuovoUtente.foto = imgUtente;
+
+    console.log(nuovoUtente);
+
+    cards.push(nuovoUtente);
+    console.log(cards);
+
+    teamContainer.innerHTML += `
+    <div class="team-card">
+
+        <div class="card-image">
+            <img src="${imgUtente}"/>
+        </div>
+
+        <div class="card-text">
+            <h3>${nomeUtente}</h3>
+            <p>${ruoloUtente}</p>
+        </div>
+
+    </div>`
+
+
+})
+
+
+
+
+// 5 -  
+function generatoreNuovaCard(cards, teamContainer) {
+    for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        // console.log(card);
+    
+        teamContainer.innerHTML += `
+            <div class="team-card">
+        
+                <div class="card-image">
+                    <img src="${card.foto}" alt="Wayne Barnett"/>
+                </div>
+        
+                <div class="card-text">
+                    <h3>${card.nome}</h3>
+                    <p>${card.ruolo}</p>
+                </div>
+        
+            </div>`
+    }
+    
 }
 
 
